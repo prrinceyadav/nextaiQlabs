@@ -1932,10 +1932,10 @@ ul { list-style: none; }
 
 .marquee-content span {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-tertiary);
-  opacity: 0.5;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 1;
 }
 
 @keyframes marquee {
