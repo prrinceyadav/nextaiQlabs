@@ -2527,6 +2527,149 @@ ul { list-style: none; }
   width: 100%;
   max-width: 500px;
 }
+
+/* ═══════════════════════════════════════
+   STUDENT ENGAGEMENT & EXPERIENCE KIT
+═══════════════════════════════════════ */
+.kit-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+}
+
+.kit-hero-img {
+  max-width: 820px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(79, 142, 255, 0.12);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+
+.kit-hero-img:hover {
+  transform: scale(1.02);
+}
+
+.kit-hero-badge {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-primary);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 50px;
+  white-space: nowrap;
+  box-shadow: 0 8px 30px rgba(79, 142, 255, 0.45);
+  letter-spacing: 0.5px;
+}
+
+.kit-items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.kit-item-card {
+  padding: 32px 24px;
+  border-radius: 18px;
+  text-align: center;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s var(--ease-out-expo), border-color 0.35s;
+  border: 1px solid var(--border-glass);
+}
+
+.kit-item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(79, 142, 255, 0.15);
+  border-color: rgba(79, 142, 255, 0.35);
+}
+
+.kit-item-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(79, 142, 255, 0.4));
+}
+
+.kit-item-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.kit-item-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.kit-purpose-banner {
+  margin-top: 50px;
+}
+
+.kit-purpose-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 36px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(79, 142, 255, 0.2);
+  background: rgba(79, 142, 255, 0.04);
+}
+
+.kit-purpose-icon {
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 14px rgba(255, 220, 100, 0.5));
+}
+
+.kit-purpose-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.kit-purpose-text p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.kit-purpose-text em {
+  color: var(--accent-cyan);
+  font-style: italic;
+}
+
+@media (max-width: 968px) {
+  .kit-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .kit-items-grid {
+    grid-template-columns: 1fr;
+  }
+  .kit-purpose-inner {
+    flex-direction: column;
+    padding: 28px 24px;
+  }
+  .kit-hero-badge {
+    font-size: 0.82rem;
+    padding: 8px 20px;
+  }
+}
+
+
 /* ═══════════════════════════════════════
    INFRASTRUCTURE & TECH CARDS
 ═══════════════════════════════════════ */
