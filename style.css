@@ -623,6 +623,47 @@ ul { list-style: none; }
   gap: 32px;
 }
 
+.intro-split-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.intro-split-4 .intro-card {
+  display: flex;
+  flex-direction: column;
+  direction: ltr;
+}
+.intro-split-4 .intro-card-img {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+.intro-split-4 .intro-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intro-split-4 .intro-card-content {
+  padding: 20px;
+}
+@media (max-width: 992px) { .intro-split-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .intro-split-4 { grid-template-columns: 1fr; } }
+
+.infra-layer-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.infra-layer-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.infra-sub-section { margin-bottom: 20px; }
+
 .intro-card {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -2486,7 +2527,96 @@ ul { list-style: none; }
   width: 100%;
   max-width: 500px;
 }
+/* ═══════════════════════════════════════
+   INFRASTRUCTURE & TECH CARDS
+═══════════════════════════════════════ */
+.infra-layer-block {
+  text-align: center;
+}
+.infra-layer-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.infra-layer-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.infra-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.infra-card {
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: rgba(8, 8, 28, 0.6);
+  border: 1px solid rgba(79, 142, 255, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.infra-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(79,142,255,0.15);
+  border-color: rgba(79, 142, 255, 0.4);
+}
+.infra-img-wrap {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.infra-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.infra-card:hover .infra-img-wrap img {
+  transform: scale(1.05);
+}
+.infra-card-body {
+  padding: 18px 20px 20px;
+  position: relative;
+}
+.infra-icon {
+  position: absolute;
+  top: -20px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-primary);
+  border: 2px solid rgba(168, 85, 247, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.infra-card-body h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.infra-card-body p {
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
 
+@media (max-width: 992px) {
+  .infra-grid, .infra-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 600px) {
   .marketing-grid { grid-template-columns: 1fr; }
+  .infra-grid, .infra-grid-4 { grid-template-columns: 1fr; }
 }
