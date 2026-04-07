@@ -17,10 +17,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=16" />
 </head>
 
 <body>
+
+    <!-- ═══ PAGE PRELOADER ═══ -->
+    <div id="page-preloader" class="page-preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <span class="preloader-text">NextAIQ-Edu</span>
+        </div>
+    </div>
+
 
     <!-- ═══ THREE.JS 3D CANVAS ═══ -->
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
@@ -36,8 +45,7 @@
                 <li><a href="#skill-gap">Skill Gap</a></li>
                 <li><a href="#why-ai">Why AI</a></li>
                 <li><a href="#ecosystem">Ecosystem</a></li>
-                <li><a href="#domains">AI Domains</a></li>
-                <li><a href="#program">Curriculum</a></li>
+                <li><a href="#learning-framework">Curriculum</a></li>
                 <li><a href="#lab">Smart Lab</a></li>
                 <li><a href="#outcomes">Outcomes</a></li>
                 <li><a href="#partnership" class="nav-cta">Partner With Us</a></li>
@@ -50,6 +58,7 @@
 
     <!-- ═══ SECTION 1 — HERO ═══ -->
     <section id="hero">
+        <div class="watermark-text" aria-hidden="true">EDUCATION</div>
         <div class="hero-overlay"></div>
         <div class="hero-content reveal">
             <div class="hero-badge">
@@ -81,6 +90,13 @@
         <div class="geo-float geo-1"></div>
         <div class="geo-float geo-2"></div>
         <div class="geo-float geo-3"></div>
+
+        <!-- AI Neural Swarm (Replaced AI-Chip) -->
+        <div class="ai-neural-swarm" id="ai-neural-swarm" aria-hidden="true">
+            <!-- Dynamically populated via JS -->
+            <div class="swarm-label">AI NEURAL SWARM</div>
+        </div>
+
     </section>
 
     <!-- ═══ MARQUEE STRIP ═══ -->
@@ -123,34 +139,38 @@
     <!-- ═══ SECTION 2 — SKILL GAP ═══ -->
     <section id="skill-gap" class="section">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">The Problem</span>
-                <h2>The Current Skill Gap in Indian Schools</h2>
-                <p class="section-desc">Traditional education is falling behind the pace of technological innovation.
-                    Students are entering a workforce that demands AI literacy — but schools aren't equipped to provide
-                    it.</p>
+            <div class="section-header reveal" style="text-align: left;">
+                <h2>The Current Skill Gap in Schools</h2>
+                <p class="section-desc" style="margin: 0; max-width: none;">A widening chasm between what industry needs and what schools deliver</p>
             </div>
-            <div class="skill-gap-grid stagger-children">
-                <div class="skill-gap-card glass-card reveal">
-                    <div class="skill-gap-icon">📉</div>
-                    <div class="skill-gap-stat counter" data-target="72" data-suffix="%">0</div>
-                    <h3>Schools Lack AI Curriculum</h3>
-                    <p>The vast majority of K-12 institutions have no structured AI or machine learning modules in their
-                        technology programs.</p>
+            
+            <div class="skill-gap-layout">
+                <div class="skill-gap-left reveal">
+                    <h4 class="key-gaps-title">KEY GAPS IDENTIFIED</h4>
+                    <div class="gap-list">
+                        <div class="gap-item glass-card">No exposure to real-world AI tools & platforms</div>
+                        <div class="gap-item glass-card">Curriculum outdated — still teaching legacy tech</div>
+                        <div class="gap-item glass-card">Teachers lack AI training and industry context</div>
+                        <div class="gap-item glass-card">No hands-on labs or industrial simulation environment</div>
+                    </div>
+                    <div class="gap-footer">
+                        <span style="color: #f59e0b; margin-right: 5px;">⚡</span> <em>Schools not acting now will lose both talent and competitive edge in 2025+</em>
+                    </div>
                 </div>
-                <div class="skill-gap-card glass-card reveal">
-                    <div class="skill-gap-icon">🎓</div>
-                    <div class="skill-gap-stat counter" data-target="3.5" data-suffix="M" data-decimal="true">0</div>
-                    <h3>Unfilled STEM Jobs</h3>
-                    <p>Millions of STEM positions go unfilled annually because graduates lack practical AI and data
-                        science experience.</p>
-                </div>
-                <div class="skill-gap-card glass-card reveal">
-                    <div class="skill-gap-icon">⏳</div>
-                    <div class="skill-gap-stat counter" data-target="5" data-suffix=" yrs">0</div>
-                    <h3>Curriculum Lag</h3>
-                    <p>School curricula are typically 5+ years behind current industry technology, creating a widening
-                        gap between education and employability.</p>
+                
+                <div class="skill-gap-right reveal">
+                    <div class="strategic-risk-card glass-card">
+                        <div class="risk-header">
+                            <span class="risk-icon">🧠</span>
+                            <h3>THE STRATEGIC RISK</h3>
+                        </div>
+                        <p class="risk-body">AI readiness is no longer an optional enhancement — it is becoming a strategic institutional differentiator.</p>
+                        
+                        <div class="risk-equation">
+                            <div class="req-text">What Industry Requires</div>
+                            <div class="neq-text">≠ What Schools Currently Deliver</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -238,7 +258,200 @@
         </div>
     </section>
 
-    <!-- ═══ SECTION 4B — AI ECOSYSTEM (from PPTX Slides 7-12) ═══ -->
+    <!-- ═══ SECTION 5 — INDUSTRIAL LABS ═══ -->
+    <section id="industrial-labs" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Infrastructure</span>
+                <h2>Industrial AI Labs</h2>
+                <p class="section-desc">We build futuristic, end-to-end AI laboratories within your school premises, equipped with modular furniture, high-tech robotics kits, and an immersive aesthetic.</p>
+            </div>
+            
+            <div class="lab-main-grid stagger-children">
+                <!-- B. AI + Robotics Kits -->
+                <div class="lab-card glass-card reveal">
+                    <div class="lab-card-img-wrap">
+                        <video class="lab-card-video" autoplay muted loop playsinline poster="assets/lab-robotics.png">
+                            <source src="video 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lab-card-content">
+                        <h3>AI + Robotics Kits</h3>
+                        <div class="kit-tiers">
+                            <div class="kit-tier">
+                                <h4>🧊 Basic Kits (for beginners)</h4>
+                                <ul>
+                                    <li>Arduino Uno kits</li>
+                                    <li>Sensors (IR, ultrasonic, temperature)</li>
+                                    <li>Breadboards & jumper wires</li>
+                                </ul>
+                            </div>
+                            <div class="kit-tier">
+                                <h4>⚙️ Intermediate Kits</h4>
+                                <ul>
+                                    <li>Robotics car kits</li>
+                                    <li>Raspberry Pi kits</li>
+                                    <li>Camera modules</li>
+                                </ul>
+                            </div>
+                            <div class="kit-tier">
+                                <h4>🚀 Advanced Kits</h4>
+                                <ul>
+                                    <li>AI vision kits</li>
+                                    <li>Drone kits (optional high-end)</li>
+                                    <li>IoT smart home kits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D. Furniture & Lab Design -->
+                <div class="lab-card glass-card reveal">
+                    <div class="lab-card-img-wrap">
+                        <video class="lab-card-video" autoplay muted loop playsinline poster="assets/lab-furniture.png">
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lab-card-content">
+                        <h3>Furniture & Lab Design</h3>
+                        <div class="furniture-features">
+                            <div class="f-feature">
+                                <span class="f-icon">🪑</span>
+                                <div>
+                                    <h4>Modular Desks</h4>
+                                    <p>Hexagonal interlocking tables perfect for collaborative group learning.</p>
+                                </div>
+                            </div>
+                            <div class="f-feature">
+                                <span class="f-icon">⚡</span>
+                                <div>
+                                    <h4>Charging Stations</h4>
+                                    <p>Integrated power delivery for edge devices and laptops.</p>
+                                </div>
+                            </div>
+                            <div class="f-feature">
+                                <span class="f-icon">📝</span>
+                                <div>
+                                    <h4>Whiteboard + Idea Wall</h4>
+                                    <p>Massive digital workflows and brainstorming surfaces.</p>
+                                </div>
+                            </div>
+                            <div class="f-feature">
+                                <span class="f-icon">✨</span>
+                                <div>
+                                    <h4>Branding (NextAIQ Lab 🚀)</h4>
+                                    <p>Custom aesthetic integrations with your school's identity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lab-footer reveal">
+                <div class="lab-tagline glass-card">
+                    👉 <em>“We don’t just install lab — we run it”</em>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 6 — PROGRESSIVE LEARNING FRAMEWORK ═══ -->
+    <section id="learning-framework" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Methodology</span>
+                <h2>Progressive Learning Framework</h2>
+                <p class="section-desc">A structured pathway designed to take students from AI curiosity to technical mastery across all grade levels.</p>
+            </div>
+
+            <div class="framework-grid stagger-children">
+                <!-- Left: What Students Learn -->
+                <div class="framework-card glass-card reveal">
+                    <h2>What Students Learn</h2>
+                    <div class="learn-list">
+                        <div class="learn-item">
+                            <div class="learn-number n-1">1</div>
+                            <div class="learn-content">
+                                <h3>AI & Machine Learning Basics</h3>
+                                <p>How models learn, neural networks, image recognition, text classification — no PhD needed.</p>
+                            </div>
+                        </div>
+                        <div class="learn-item">
+                            <div class="learn-number n-2">2</div>
+                            <div class="learn-content">
+                                <h3>Coding & Python</h3>
+                                <p>From Scratch block coding to real Python. Data, loops, functions, APIs, building apps.</p>
+                            </div>
+                        </div>
+                        <div class="learn-item">
+                            <div class="learn-number n-3">3</div>
+                            <div class="learn-content">
+                                <h3>Robotics & Physical AI</h3>
+                                <p>Build, wire, and program robots. Sensors, motors, object detection on tiny hardware.</p>
+                            </div>
+                        </div>
+                        <div class="learn-item">
+                            <div class="learn-number n-4">4</div>
+                            <div class="learn-content">
+                                <h3>AI Ethics & Society</h3>
+                                <p>Bias in models, privacy, deepfakes, responsible AI — critical thinking for the real world.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Lab Readiness by Grade -->
+                <div class="framework-card glass-card reveal">
+                    <h2>Lab Readiness by Grade</h2>
+                    <div class="grade-list">
+                        <div class="grade-item">
+                            <div class="grade-info">
+                                <span class="grade-label">Grade 6–7 (Beginners)</span>
+                                <span class="grade-curriculum">Scratch + Teachable Machine</span>
+                            </div>
+                            <div class="grade-bar-wrap">
+                                <div class="grade-bar bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="grade-item">
+                            <div class="grade-info">
+                                <span class="grade-label">Grade 8–9 (Intermediate)</span>
+                                <span class="grade-curriculum">Python + Arduino + CV</span>
+                            </div>
+                            <div class="grade-bar-wrap">
+                                <div class="grade-bar bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="grade-item">
+                            <div class="grade-info">
+                                <span class="grade-label">Grade 10–11 (Advanced)</span>
+                                <span class="grade-curriculum">PyTorch + Raspberry Pi + ML</span>
+                            </div>
+                            <div class="grade-bar-wrap">
+                                <div class="grade-bar bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="grade-item">
+                            <div class="grade-info">
+                                <span class="grade-label">Grade 12 (Research)</span>
+                                <span class="grade-curriculum">Projects + Competitions + APIs</span>
+                            </div>
+                            <div class="grade-bar-wrap">
+                                <div class="grade-bar bar-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="framework-footer">
+                        <p>All levels run simultaneously in the same lab. Peer mentoring across grades is a core part of the culture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 7 — AI ECOSYSTEM (from PPTX Slides 7-12) ═══ -->
     <section id="ecosystem" class="section section-dark">
         <div class="container">
             <div class="section-header reveal">
@@ -445,173 +658,6 @@
         </div>
     </section>
 
-    <!-- ═══ SECTION 5 — AI DOMAINS (from PPTX) ═══ -->
-    <section id="domains" class="section section-dark">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">What Students Learn</span>
-                <h2>Three Domains of AI</h2>
-                <p class="section-desc">AI is divided into domains based on the type of data it processes. Our
-                    curriculum covers all three, with hands-on projects in each.</p>
-            </div>
-            <div class="domains-grid stagger-children">
-                <div class="domain-card glass-card reveal">
-                    <div class="domain-icon-wrap">👁️</div>
-                    <h3>Computer Vision</h3>
-                    <div class="domain-input">Input: Images & Videos</div>
-                    <p>Machines that can SEE — recognize faces, detect objects, read X-rays, and power self-driving cars.
-                        Students build image classifiers and object detectors.</p>
-                    <div class="domain-examples">
-                        <span>Face ID</span>
-                        <span>Instagram Filters</span>
-                        <span>Cricket DRS</span>
-                        <span>Google Lens</span>
-                        <span>Medical X-rays</span>
-                    </div>
-                </div>
-                <div class="domain-card glass-card reveal">
-                    <div class="domain-icon-wrap">💬</div>
-                    <h3>Natural Language Processing</h3>
-                    <div class="domain-input">Input: Text & Speech</div>
-                    <p>Machines that can UNDERSTAND language — translate, summarize, converse, and generate text.
-                        Students create chatbots and sentiment analyzers.</p>
-                    <div class="domain-examples">
-                        <span>Siri & Alexa</span>
-                        <span>Google Translate</span>
-                        <span>ChatGPT</span>
-                        <span>Voice Typing</span>
-                        <span>Chatbots</span>
-                    </div>
-                </div>
-                <div class="domain-card glass-card reveal">
-                    <div class="domain-icon-wrap">📊</div>
-                    <h3>Statistical Data AI</h3>
-                    <div class="domain-input">Input: Numbers & Patterns</div>
-                    <p>Machines that find PATTERNS in numbers — predict weather, detect fraud, forecast demand.
-                        Students analyze real datasets and build prediction models.</p>
-                    <div class="domain-examples">
-                        <span>Weather Forecast</span>
-                        <span>Stock Market</span>
-                        <span>Hospital Records</span>
-                        <span>IPL Analytics</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ SECTION 6 — REAL WORLD AI (from PPTX) ═══ -->
-    <section id="realworld" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">AI In Action</span>
-                <h2>Real-World AI Examples from India</h2>
-                <p class="section-desc">AI isn't just in science labs — it's in your pocket, on cricket fields, and in
-                    hospitals. Students learn through examples they already know.</p>
-            </div>
-            <div class="realworld-grid stagger-children">
-                <div class="realworld-card glass-card reveal">
-                    <div class="rw-icon">🏏</div>
-                    <h3>Cricket DRS — AI on the Field</h3>
-                    <p>In IPL cricket, the Hawk-Eye system uses Computer Vision AI to track ball paths and predict
-                        outcomes. It decides OUT or NOT OUT in just 2 seconds — analyzing physics data from each
-                        ball in real time. Pure AI, not automation!</p>
-                    <span class="rw-tag">Computer Vision</span>
-                </div>
-                <div class="realworld-card glass-card reveal">
-                    <div class="rw-icon">🗺️</div>
-                    <h3>Google Maps — Live Routing</h3>
-                    <p>Google Maps uses AI to analyze GPS data from millions of phones, real-time traffic speed, accident
-                        reports, and historical patterns. It predicts the fastest route NOW and re-routes automatically
-                        if conditions change.</p>
-                    <span class="rw-tag">Statistical Data</span>
-                </div>
-                <div class="realworld-card glass-card reveal">
-                    <div class="rw-icon">🔓</div>
-                    <h3>Face Unlock — 30,000 Points</h3>
-                    <p>Your phone's Face ID maps 30,000+ unique points on your face to create a mathematical 'face map'.
-                        It unlocks in 0.1 seconds, works in dim light, and can't be fooled by a photo. Different from
-                        all 8 billion humans!</p>
-                    <span class="rw-tag">Computer Vision</span>
-                </div>
-                <div class="realworld-card glass-card reveal">
-                    <div class="rw-icon">🩺</div>
-                    <h3>AI Detecting TB in Rural India</h3>
-                    <p>India has a severe shortage of radiologists in rural areas. AI trained on 1M+ chest X-rays can
-                        detect Tuberculosis with 90%+ accuracy in under 30 seconds — literally saving lives where no
-                        specialist doctor is available.</p>
-                    <span class="rw-tag">Computer Vision + Data</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══ SECTION 7 — CURRICULUM ═══ -->
-    <section id="program" class="section section-dark">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-tag">The Curriculum</span>
-                <h2>Progressive Learning Framework</h2>
-                <p class="section-desc">A modular, 4-tier curriculum that takes students from AI fundamentals to advanced
-                    industrial applications — aligned with CBSE and NEP 2020.</p>
-            </div>
-            <div class="curriculum-timeline reveal">
-                <div class="curriculum-tier glass-card">
-                    <div class="tier-dot"></div>
-                    <span class="tier-badge">Tier 1 · Foundation</span>
-                    <h3>AI Awareness & Fundamentals</h3>
-                    <p>Introduction to artificial intelligence concepts — what is AI vs automation, the three domains of
-                        AI, ethical considerations, and basic Python programming. Interactive demos bring concepts alive.</p>
-                    <div class="tier-checklist">
-                        <span class="check-item">✓ What is AI?</span>
-                        <span class="check-item">✓ AI vs Automation</span>
-                        <span class="check-item">✓ Python basics</span>
-                        <span class="check-item">✓ Ethics in AI</span>
-                    </div>
-                </div>
-                <div class="curriculum-tier glass-card">
-                    <div class="tier-dot"></div>
-                    <span class="tier-badge">Tier 2 · Exploration</span>
-                    <h3>Machine Learning & Data Science</h3>
-                    <p>Hands-on experience with supervised and unsupervised learning, data visualization, and building
-                        first ML models using real Indian datasets — from weather to cricket stats.</p>
-                    <div class="tier-checklist">
-                        <span class="check-item">✓ Supervised learning</span>
-                        <span class="check-item">✓ Data visualization</span>
-                        <span class="check-item">✓ Model training</span>
-                        <span class="check-item">✓ Kaggle challenges</span>
-                    </div>
-                </div>
-                <div class="curriculum-tier glass-card">
-                    <div class="tier-dot"></div>
-                    <span class="tier-badge">Tier 3 · Application</span>
-                    <h3>Computer Vision & NLP Projects</h3>
-                    <p>Deep learning architectures, image classification, object detection, chatbot building, and
-                        deploying models on edge devices like NVIDIA Jetson and Raspberry Pi.</p>
-                    <div class="tier-checklist">
-                        <span class="check-item">✓ CNN architectures</span>
-                        <span class="check-item">✓ Object detection</span>
-                        <span class="check-item">✓ Chatbot building</span>
-                        <span class="check-item">✓ Edge deployment</span>
-                    </div>
-                </div>
-                <div class="curriculum-tier glass-card">
-                    <div class="tier-dot"></div>
-                    <span class="tier-badge">Tier 4 · Mastery</span>
-                    <h3>Industrial AI & Capstone</h3>
-                    <p>Students tackle real industrial challenges — quality inspection, predictive maintenance, and
-                        IoT analytics — culminating in a capstone project mentored by NextAIQ Labs engineers.</p>
-                    <div class="tier-checklist">
-                        <span class="check-item">✓ Industrial use cases</span>
-                        <span class="check-item">✓ IoT integration</span>
-                        <span class="check-item">✓ Capstone project</span>
-                        <span class="check-item">✓ Industry certification</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ═══ SECTION 8 — SMART LAB ═══ -->
     <section id="lab" class="section">
         <div class="container">
@@ -738,43 +784,26 @@
                 <p class="section-desc">Partnering with NextAIQ-Edu elevates your institution's brand, attracts top
                     students, and positions you as a leader in future-ready education.</p>
             </div>
-            <div class="benefits-layout">
-                <div class="benefits-image reveal-left">
-                    <img src="assets/edu-classroom.png" alt="Future-ready school" loading="lazy" />
+            <div class="benefits-grid stagger-children">
+                <div class="benefit-card glass-card reveal">
+                    <div class="benefit-icon">🏫</div>
+                    <h3>Enhanced Reputation</h3>
+                    <p>Position your school as a pioneer in AI education — attract top-tier students, faculty, and research partnerships.</p>
                 </div>
-                <div class="benefits-list reveal-right">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🏫</div>
-                        <div>
-                            <h3>Enhanced Reputation</h3>
-                            <p>Position your school as a pioneer in AI education — attract top-tier students, faculty,
-                                and research partnerships.</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">📈</div>
-                        <div>
-                            <h3>Higher Enrollment</h3>
-                            <p>Schools with AI labs report 30–45% increases in STEM program enrollment within the first
-                                year of partnership.</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🏅</div>
-                        <div>
-                            <h3>Competition Excellence</h3>
-                            <p>Equip students to win national and international science fairs, hackathons, and AI
-                                olympiads.</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🤝</div>
-                        <div>
-                            <h3>Industry Connections</h3>
-                            <p>Direct mentorship, internship pipelines, and guest lectures from NextAIQ Labs engineers
-                                and data scientists.</p>
-                        </div>
-                    </div>
+                <div class="benefit-card glass-card reveal">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Higher Enrollment</h3>
+                    <p>Schools with AI labs report 30–45% increases in STEM program enrollment within the first year of partnership.</p>
+                </div>
+                <div class="benefit-card glass-card reveal">
+                    <div class="benefit-icon">🏅</div>
+                    <h3>Competition Excellence</h3>
+                    <p>Equip students to win national and international science fairs, hackathons, and AI olympiads.</p>
+                </div>
+                <div class="benefit-card glass-card reveal">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Industry Connections</h3>
+                    <p>Direct mentorship, internship pipelines, and guest lectures from NextAIQ Labs engineers and data scientists.</p>
                 </div>
             </div>
         </div>
@@ -1094,6 +1123,7 @@
 
     <!-- ═══ SECTION 14 — CTA ═══ -->
     <section id="next-steps" class="section cta-section">
+        <div class="watermark-text" aria-hidden="true">FUTURE</div>
         <div class="container">
             <div class="cta-content reveal">
                 <h2>Ready to Transform<br /><span class="gradient-text">Your School?</span></h2>
@@ -1178,7 +1208,6 @@
             </div>
             <div class="footer-links">
                 <a href="#skill-gap">Skill Gap</a>
-                <a href="#domains">AI Domains</a>
                 <a href="#program">Curriculum</a>
                 <a href="#lab">Smart Lab</a>
                 <a href="#partnership">Partnership</a>
