@@ -579,18 +579,79 @@
                 if (submitLoader) submitLoader.style.display = 'inline-flex';
                 submitBtn.disabled = true;
 
-                // Simulate submission (replace with real endpoint)
-                setTimeout(() => {
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                data.form_type = 'Consultation Request';
+
+                fetch("https://script.google.com/macros/s/AKfycbwmOJHBx300xkX6iHvHftplLA7WsxBXouJSP4Mq7ElA5VYRGmkMG0XOVUsgwFqLvQtt/exec", {
+                    method: "POST",
+                    body: JSON.stringify(data)
+                })
+                .then(res => {
                     form.style.display = 'none';
                     successDiv.style.display = 'block';
-
+                })
+                .catch(err => {
+                    console.error("Submission error:", err);
+                    alert("Something went wrong. Please try again or email us directly.");
+                })
+                .finally(() => {
                     // Reset button state
                     if (submitText) submitText.style.display = '';
                     if (submitLoader) submitLoader.style.display = 'none';
                     submitBtn.disabled = false;
-                }, 1500);
+                });
             });
         }
+    }
+
+    // ───────────────────────────────────────────────
+    // CONTACT FORM
+    // ───────────────────────────────────────────────
+    function initContactForm() {
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('contact-submit-btn');
+        const successMessage = document.getElementById('contact-success');
+        const errorMessage = document.getElementById('contact-error');
+
+        if (!form || !submitBtn) return;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const submitText = submitBtn.querySelector('.submit-text');
+            const submitLoader = submitBtn.querySelector('.submit-loader');
+
+            // Show loader
+            if (submitText) submitText.style.display = 'none';
+            if (submitLoader) submitLoader.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.form_type = 'Direct Contact';
+
+            fetch("https://script.google.com/macros/s/AKfycbwmOJHBx300xkX6iHvHftplLA7WsxBXouJSP4Mq7ElA5VYRGmkMG0XOVUsgwFqLvQtt/exec", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(res => {
+                form.reset();
+                successMessage.style.display = 'block';
+            })
+            .catch(err => {
+                console.error("Submission error:", err);
+                errorMessage.style.display = 'block';
+            })
+            .finally(() => {
+                // Reset button state
+                if (submitText) submitText.style.display = '';
+                if (submitLoader) submitLoader.style.display = 'none';
+                submitBtn.disabled = false;
+            });
+        });
     }
 
     // ───────────────────────────────────────────────
@@ -802,6 +863,7 @@
         initScrollMarquee();
         initCardGlow();
         initNeuralSwarm();
+        initContactForm();
 
         // Force initial reveal check
         const heroContent = document.querySelector('.hero-content');
